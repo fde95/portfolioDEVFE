@@ -1,0 +1,16 @@
+.cyber-title {
+  font-family: "Orbitron", monospace;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-shadow: var(--text-shadow);
+  background: var(--gradient-matrix);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.terminal-text {
+  color: hsl(var(--matrix-green));
+  text-shadow: 0 0 5px hsl(var(--matrix-green) / 0.5);
+}

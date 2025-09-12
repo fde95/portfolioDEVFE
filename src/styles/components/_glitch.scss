@@ -1,0 +1,22 @@
+.glitch {
+  position: relative;
+  color: hsl(var(--matrix-green));
+
+  &::before,
+  &::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    background: transparent;
+  }
+  &::before {
+    animation: glitch-anim-1 0.5s infinite linear alternate-reverse;
+    color: hsl(var(--matrix-red));
+    z-index: -1;
+  }
+  &::after {
+    animation: glitch-anim-2 0.3s infinite linear alternate-reverse;
+    color: hsl(var(--matrix-green-bright));
+    z-index: -2;
+  }
+}

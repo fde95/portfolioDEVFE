@@ -1,0 +1,35 @@
+// Cores base
+$matrix-black: 0 0% 4%;
+$matrix-dark: 0 0% 8%;
+$matrix-green: 120 100% 50%;
+$matrix-green-bright: 120 100% 65%;
+$matrix-green-dim: 120 100% 25%;
+$matrix-red: 0 100% 50%;
+$matrix-white: 0 0% 95%;
+$matrix-gray: 0 0% 60%;
+
+// Variaveis para facilitar transparências com /alpha
+:root {
+  --matrix-black: #{$matrix-black};
+  --matrix-dark: #{$matrix-dark};
+  --matrix-green: #{$matrix-green};
+  --matrix-green-bright: #{$matrix-green-bright};
+  --matrix-green-dim: #{$matrix-green-dim};
+  --matrix-red: #{$matrix-red};
+  --matrix-white: #{$matrix-white};
+  --matrix-gray: #{$matrix-gray};
+
+  --gradient-matrix: linear-gradient(
+    135deg,
+    hsl(var(--matrix-green) / 0.8),
+    hsl(var(--matrix-green-bright) / 0.4)
+  );
+  --gradient-cyber: linear-gradient(
+    180deg,
+    hsl(var(--matrix-black)),
+    hsl(var(--matrix-dark))
+  );
+  --shadow-matrix: 0 0 20px hsl(var(--matrix-green) / 0.3);
+  --text-shadow: 0 0 10px hsl(var(--matrix-green) / 0.8);
+  --radius: 4px;
+}

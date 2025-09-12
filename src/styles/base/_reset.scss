@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+body {
+  background: linear-gradient(
+    180deg,
+    hsl(var(--matrix-black)),
+    hsl(var(--matrix-dark))
+  );
+  color: hsl(var(--matrix-green));
+  font-family: "Fira Code", monospace;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+button {
+  font: inherit;
+  background: none;
+  border: 1px solid hsl(var(--matrix-green));
+  color: inherit;
+  cursor: pointer;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}

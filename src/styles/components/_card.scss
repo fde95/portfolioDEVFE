@@ -1,0 +1,14 @@
+.card {
+  &--matrix {
+    background: hsl(var(--matrix-dark) / 0.8);
+    // @include card-border;
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+
+    &:hover {
+      border-color: hsl(var(--matrix-green));
+      box-shadow: var(--shadow-matrix);
+      transform: translateY(-2px);
+    }
+  }
+}
