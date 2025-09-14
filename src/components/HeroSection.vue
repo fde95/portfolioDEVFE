@@ -42,14 +42,19 @@
 </script>
 <template>
   <section class="hero container">
+    <!-- Titulo animado -->
     <h1 class="glitch cyber-title leading-tigh hero__title" :data-text="displayText">
       {{ displayText }}<span v-if="showCursor" class="hero__cursor">|</span>
     </h1>
+
+    <!-- Subtitulo -->
     <p
       class="hero__subtitle terminal-text "
     >
         {{ subtitle }}
     </p>
+
+    <!-- Card - Terminal -->
     <div class="flex hero__buttons">
       <button class="button button--matrix">
         <a href="#">Ver Projetos</a>
