@@ -1,15 +1,54 @@
-<script setup></script>
+<script setup>
+  import { ref, onMounted, onUnmounted } from 'vue';
+
+  // estado relativo
+  const displayText = ref('')
+  const currentIndex = ref(0)
+  const showCursor = ref(true)
+
+  const fullText = "Desenvolvedor Front-end"
+  const subtitle = "Transformando ideias em experiências digitais extraordinárias"
+
+  let typingTimeout = null
+  let cursorInterval = null
+
+  // efeito de digitação
+  const typeWriter = () => {
+    if (currentIndex.value < fullText.length) {
+      typingTimeout = setTimeout (() => {
+        displayText.value += fullText[currentIndex.value]
+        currentIndex.value++
+        typeWriter()
+      }, 100)
+    }
+  }
+
+  // cursor piscando
+  const startCursorBlink = () => {
+    cursorInterval = setInterval(() => {
+      showCursor.value = !showCursor.value
+    }, 500)
+  }
+
+  // ciclo de vida
+  onMounted(() => {
+    typeWriter()
+    startCursorBlink()
+  })
+  onUnmounted(() => {
+    clearTimeout(typingTimeout)
+    clearInterval(cursorInterval)
+  })
+</script>
 <template>
   <section class="hero container">
-    <h1 class="glitch cyber-title leading-tigh hero__title">
-      Desenvolvedor
-      <br />
-      <span>Front-end</span>
+    <h1 class="glitch cyber-title leading-tigh hero__title" :data-text="displayText">
+      {{ displayText }}<span v-if="showCursor" class="hero__cursor">|</span>
     </h1>
     <p
       class="hero__subtitle terminal-text "
     >
-      Transformando ideias em experiências digitais extraordinárias
+        {{ subtitle }}
     </p>
     <div class="flex hero__buttons">
       <button class="button button--matrix">
