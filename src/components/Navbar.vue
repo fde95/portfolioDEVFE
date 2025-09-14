@@ -63,6 +63,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 0;
+  position: sticky;
 
   &__logo {
     font-family: "Orbitron", monospace;

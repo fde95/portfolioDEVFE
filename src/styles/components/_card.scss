@@ -1,7 +1,29 @@
+@use '../helpers/mixins' as m;
+
+.bg-matrix{
+  &-red, &-yellow, &-green{
+    height: .75rem;
+    width: .75rem;
+    border-radius: 999px;
+  }
+
+  &-red{
+    background-color: hsl(var(--matrix-red));
+  }
+  &-yellow{
+    background-color: rgb(234, 179, 8);
+    margin-left: .5rem;
+  }
+  &-green{
+    background-color: hsl(var(--matrix-green));
+    margin-left: .5rem;
+  }
+}
+
 .card {
   &--matrix {
     background: hsl(var(--matrix-dark) / 0.8);
-    // @include card-border;
+    @include m.card-border;
     backdrop-filter: blur(10px);
     padding: 1.5rem;
 

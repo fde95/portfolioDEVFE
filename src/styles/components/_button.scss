@@ -1,3 +1,5 @@
+@use '../helpers/mixins' as m;
+
 .button {
   &--matrix {
     position: relative;
@@ -29,5 +31,7 @@
       box-shadow: var(--shadow-matrix);
       background: hsl(var(--matrix-green) / 0.1);
     }
+
+    &:focus-visible { @include m.focus-ring; }
   }
 }

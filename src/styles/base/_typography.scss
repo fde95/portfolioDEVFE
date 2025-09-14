@@ -14,3 +14,12 @@
   color: hsl(var(--matrix-green));
   text-shadow: 0 0 5px hsl(var(--matrix-green) / 0.5);
 }
+.text-matrix-white{
+  color: hsl(var(--matrix-white));
+}
+.text-matrix-gray{
+  color: hsl(var(--matrix-gray));
+  margin-left: 1rem;
+  font-size: .875;
+  text-transform: lowercase;
+}
