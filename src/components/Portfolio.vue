@@ -138,7 +138,6 @@ const projects = [
   },
 ];
 
-/* ===== Mapeia status → classe (cor) ===== */
 function statusClass(status) {
   switch (status) {
     case "DEPLOYED":
