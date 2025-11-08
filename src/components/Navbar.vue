@@ -37,16 +37,16 @@
         <a href="#">Home</a>
       </li>
       <li>
-        <a href="#">Sobre</a>
+        <a href="#about">Sobre</a>
       </li>
       <li>
-        <a href="#">Projetos</a>
+        <a href="#portfolio">Projetos</a>
       </li>
       <li>
-        <a href="#">Skills</a>
+        <a href="#skills">Skills</a>
       </li>
       <li>
-        <a href="#">Contato</a>
+        <a href="#contact">Contato</a>
       </li>
     </ul>
 
