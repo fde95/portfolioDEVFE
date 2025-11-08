@@ -3,6 +3,7 @@ import MatrixRain from './components/MatrixRain.vue';
 import Navbar from './components/Navbar.vue';
 import HeroSection from './components/HeroSection.vue';
 import About from './components/About.vue';
+import Portfolio from './components/Portfolio.vue';
 </script>
 
 <template>
@@ -13,6 +14,7 @@ import About from './components/About.vue';
   <main>
     <HeroSection/>
     <About/>
+    <Portfolio />
   </main>
   </template>
 
