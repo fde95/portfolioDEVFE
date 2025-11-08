@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, onUnmounted, h, defineComponent } from "vue";
+import { ref, onMounted, onUnmounted, h, defineComponent, computed } from "vue";
 
 const isVisible = ref(false);
 const sectionEl = ref(null);
@@ -26,7 +26,6 @@ const Icon = defineComponent({
   },
   setup(props) {
     const paths = {
-      // Code2
       code: [
         h("polyline", {
           points: "16 18 22 12 16 6",
@@ -45,7 +44,6 @@ const Icon = defineComponent({
           "stroke-linejoin": "round",
         }),
       ],
-      // Zap
       zap: [
         h("polygon", {
           points: "13 2 3 14 12 14 11 22 21 10 12 10 13 2",
@@ -56,7 +54,6 @@ const Icon = defineComponent({
           "stroke-linejoin": "round",
         }),
       ],
-      // Users
       users: [
         h("path", {
           d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2",
@@ -89,7 +86,6 @@ const Icon = defineComponent({
           "stroke-linecap": "round",
         }),
       ],
-      // Target
       target: [
         h("circle", {
           cx: 12,
@@ -154,6 +150,12 @@ const features = [
     description: "Soluções que geram impacto real nos negócios dos clientes",
   },
 ];
+
+const START_YEAR = 2022
+const yearsExperience = computed(() => {
+  const y = new Date().getFullYear() - START_YEAR
+  return Math.max(0, y)
+})
 </script>
 
 <template>
@@ -178,10 +180,10 @@ const features = [
 
             <div class="about__card-body">
               <p class="about__line about__line--title">
-                # Desenvolvedor Front-End Pleno
+                # Desenvolvedor Front-End
               </p>
               <p class="about__line">
-                Com 3 anos de experiência, participei de
+                Com {{ yearsExperience }} anos de experiência, participei de
                 projetos que exigiram alta performance e interfaces modernas
                 para grandes empresas de diversos setores. Tenho
                 como foco criar soluções escaláveis, com código limpo e
