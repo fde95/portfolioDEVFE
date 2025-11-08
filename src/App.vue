@@ -5,6 +5,7 @@ import HeroSection from './components/HeroSection.vue';
 import About from './components/About.vue';
 import Portfolio from './components/Portfolio.vue';
 import Skills from './components/Skills.vue';
+import Contact from './components/Contact.vue';
 </script>
 
 <template>
@@ -17,7 +18,7 @@ import Skills from './components/Skills.vue';
     <About/>
     <Portfolio />
     <Skills />
-    
+    <Contact />
   </main>
   </template>
 
