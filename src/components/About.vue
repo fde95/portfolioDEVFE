@@ -387,6 +387,9 @@ const yearsExperience = computed(() => {
     place-items: center;
     pointer-events: none;
     opacity: 0.05;
+    @media (max-width: 767.98px) {
+      display: none !important;
+    }
   }
   &__bg-block {
     font: 400 0.75rem/1 "Fira Code", monospace;
