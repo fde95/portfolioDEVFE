@@ -189,7 +189,7 @@ const Icon = defineComponent({
         <div class="footer__copy">
           <span>© {{ currentYear }} DEVFE.</span>
           <span>Feito com</span>
-          <Icon name="heart" class="footer__heart" />
+          <Icon name="heart" class="footer__heart" /> <small>(amor, e não Lovable)</small>
           <span>e muito código</span>
         </div>
 

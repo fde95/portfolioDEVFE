@@ -100,7 +100,7 @@ const projects = [
     description:
       "Landing page desenvolvida em código puro e inspirada no universo digital da Matrix. Projeto focado em performance, UI/UX avançado e transições fluídas. Ideal para demonstrar domínio em front-end e manipulação de interface visual refinada.",
     tech: ["Vite", "VueJS", "JavaScript", "ES6+", "SASS", "Git"],
-    status: "DEPLOYED",
+    status: "BETA",
     category: "FRONTEND",
     githubUrl: "https://github.com/fde95/portfolioDEVFE",
     demoUrl: "https://portfolio.devfe.com.br/",
