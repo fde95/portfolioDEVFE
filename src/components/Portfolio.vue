@@ -117,7 +117,7 @@ const projects = [
   },
   {
     id: 3,
-    title: "SUPERIX — SOLUÇÕES WEB — DEPLOYED",
+    title: "SUPERIX — SOLUÇÕES WEB",
     description:
       "Redesign do site institucional da agência Superix, priorizando experiência imersiva e fluidez de navegação. Layout responsivo, leve e otimizado para SEO, reforçando a identidade visual e o posicionamento digital da marca.",
     tech: ["Joomla", "HTML 5", "CSS 3", "JavaScript", "jQuery"],
