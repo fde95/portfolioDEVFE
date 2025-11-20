@@ -113,7 +113,7 @@ const projects = [
     tech: ["Joomla", "HTML 5", "CSS 3", "JavaScript", "jQuery"],
     status: "LIVE",
     category: "FULLSTACK",
-    demoUrl: "https://www.academiagavioes.com.br/",
+    demoUrl: "https://gymgavioes.com.py/",
   },
   {
     id: 3,
