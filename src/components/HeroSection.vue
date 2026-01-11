@@ -1,10 +1,13 @@
 <script setup>
-import { ref, onMounted, onUnmounted, h, defineComponent } from "vue";
+import { ref, onMounted, onUnmounted, h, defineComponent, computed, watch } from "vue";
+import { useI18n } from 'vue-i18n';
 
-/* Texto e efeitos */
-const fullText = "DESENVOLVEDOR FRONT-END";
-const subtitle =
-  "Transformando ideias em experiências digitais extraordinárias";
+/* i18n para traduções */
+const { t } = useI18n();
+
+/* Texto e efeitos - agora com suporte a tradução */
+const fullText = computed(() => t('hero.title'));
+const subtitle = computed(() => t('hero.subtitle'));
 const displayText = ref("");
 const showCursor = ref(true);
 const cvUrl = "/#contact"; // ajuste se necessário
@@ -12,17 +15,33 @@ const cvUrl = "/#contact"; // ajuste se necessário
 let typeInterval = null;
 let cursorInterval = null;
 
-onMounted(() => {
-  // efeito de digitação
+/**
+ * Inicia o efeito de digitação do título
+ * Recria o efeito sempre que o idioma mudar
+ */
+function startTypeEffect() {
+  displayText.value = "";
   let i = 0;
+  if (typeInterval) clearInterval(typeInterval);
+  
   typeInterval = setInterval(() => {
-    if (i < fullText.length) {
-      displayText.value += fullText[i];
+    if (i < fullText.value.length) {
+      displayText.value += fullText.value[i];
       i++;
     } else {
       clearInterval(typeInterval);
     }
   }, 100);
+}
+
+/* Observa mudanças no idioma para recriar o efeito de digitação */
+watch(fullText, () => {
+  startTypeEffect();
+});
+
+onMounted(() => {
+  // efeito de digitação inicial
+  startTypeEffect();
 
   // cursor blink
   cursorInterval = setInterval(() => {
@@ -103,14 +122,14 @@ const Icon = defineComponent({
             class="button--matrix hero__btn"
             @click="scrollTo('#portfolio')"
           >
-            <span>VER PROJETOS</span>
+            <span>{{ t('hero.cta.projects') }}</span>
           </button>
           <a
             class="button--matrix hero__btn"
             :href="cvUrl"
             rel="noopener"
           >
-            <span>CONTRATAR</span>
+            <span>{{ t('hero.cta.hire') }}</span>
           </a>
         </div>
 
@@ -126,21 +145,20 @@ const Icon = defineComponent({
           <div class="hero__term-lines">
             <div>
               <span class="hero__prompt">user@portfolio:~$</span>
-              <span class="hero__cmd">whoami</span>
+              <span class="hero__cmd">{{ t('hero.terminal.whoami') }}</span>
             </div>
-            <div class="hero__term-line">felipe.spinoza</div>
+            <div class="hero__term-line">{{ t('hero.terminal.name') }}</div>
             <div class="hero__term-line">
-              → Desenvolvedor Front-End focado em código limpo e semântico
-            </div>
-            <div class="hero__term-line">
-              → Especialista em Vue.js, JavaScript (ES6+) e Vite
+              {{ t('hero.terminal.line1') }}
             </div>
             <div class="hero__term-line">
-              → Experiência com SCSS (BEM), animações e interfaces performáticas
+              {{ t('hero.terminal.line2') }}
             </div>
             <div class="hero__term-line">
-              → Criador de soluções digitais práticas e experiências web
-              impactantes
+              {{ t('hero.terminal.line3') }}
+            </div>
+            <div class="hero__term-line">
+              {{ t('hero.terminal.line4') }}
             </div>
           </div>
         </div>

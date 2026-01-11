@@ -1,5 +1,10 @@
 <script setup>
-import { ref, onMounted, onUnmounted, h, defineComponent } from "vue";
+import { ref, onMounted, onUnmounted, h, defineComponent, computed } from "vue";
+import { useI18n } from 'vue-i18n';
+import LanguageSelector from './LanguageSelector.vue';
+
+/* i18n para traduções */
+const { t } = useI18n();
 
 /* estado */
 const isScrolled = ref(false);
@@ -8,14 +13,16 @@ const activeSection = ref("home");
 const scrollProgress = ref(0);
 const mobileMaxHeight = "420px";
 
-/* itens */
-const navItems = [
-  { id: "home", label: "INÍCIO", href: "#" },
-  { id: "about", label: "SOBRE", href: "#about" },
-  { id: "portfolio", label: "PROJETOS", href: "#portfolio" },
-  { id: "skills", label: "SKILLS", href: "#skills" },
-  { id: "contact", label: "CONTATO", href: "#contact" },
-];
+/**
+ * Itens de navegação traduzidos dinamicamente
+ */
+const navItems = computed(() => [
+  { id: "home", label: t('nav.home').toUpperCase(), href: "#" },
+  { id: "about", label: t('nav.about').toUpperCase(), href: "#about" },
+  { id: "portfolio", label: t('nav.portfolio').toUpperCase(), href: "#portfolio" },
+  { id: "skills", label: t('nav.skills').toUpperCase(), href: "#skills" },
+  { id: "contact", label: t('nav.contact').toUpperCase(), href: "#contact" },
+]);
 
 /* navegação suave */
 function scrollTo(href) {
@@ -61,7 +68,7 @@ function initSectionObserver() {
     }
   );
 
-  navItems.forEach(({ id }) => {
+  navItems.value.forEach(({ id }) => {
     if (id === "home") return;
     const el = document.getElementById(id);
     if (el) sectionObserver.observe(el);
@@ -203,11 +210,12 @@ const Icon = defineComponent({
 
       <!-- CTA (desktop) -->
       <div class="nav__cta">
+        <LanguageSelector />
         <button
           class="button--matrix nav__cta-btn"
           @click="scrollTo('#contact')"
         >
-          CONTRATAR
+          {{ t('hero.cta.hire') }}
         </button>
       </div>
 

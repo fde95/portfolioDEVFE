@@ -1,5 +1,9 @@
 <script setup>
 import { ref, onMounted, onUnmounted, computed } from "vue";
+import { useI18n } from 'vue-i18n';
+
+/* i18n para traduções */
+const { t } = useI18n();
 
 /* ===== estado ===== */
 const isVisible = ref(false);
@@ -123,13 +127,12 @@ const yearsExperience = computed(() => {
     <div class="container skills__container">
       <!-- Header -->
       <header class="skills__header">
-        <span class="skills__tag">[HABILIDADES.JSON]</span>
-        <h2 class="cyber-title skills__title glitch" :data-text="'TECH STACK'">
-          TECH STACK
+        <span class="skills__tag">{{ t('skills.tag') }}</span>
+        <h2 class="cyber-title skills__title glitch" :data-text="t('skills.title')">
+          {{ t('skills.title') }}
         </h2>
         <p class="skills__subtitle">
-          Tecnologias e ferramentas que domino para criar soluções robustas e
-          escaláveis.
+          {{ t('skills.subtitle') }}
         </p>
       </header>
 
@@ -145,7 +148,7 @@ const yearsExperience = computed(() => {
           <!-- Cabeçalho da categoria -->
           <div class="skill-card__head">
             <span class="skill-card__dot"></span>
-            <h3 class="skill-card__cat">{{ category.category }}</h3>
+            <h3 class="skill-card__cat">{{ t('skills.categories.' + category.category.toLowerCase()) }}</h3>
           </div>
 
           <!-- Lista de skills -->
@@ -216,15 +219,15 @@ const yearsExperience = computed(() => {
           <div class="summary__grid">
             <div class="summary__item">
               <div class="summary__value">{{ yearsExperience }}+</div>
-              <div class="summary__label">Anos de Experiência</div>
+              <div class="summary__label">{{ t('skills.summary.experience') }}</div>
             </div>
             <div class="summary__item">
               <div class="summary__value">90+</div>
-              <div class="summary__label">Projetos Entregues</div>
+              <div class="summary__label">{{ t('skills.summary.projects') }}</div>
             </div>
             <div class="summary__item">
               <div class="summary__value">15+</div>
-              <div class="summary__label">Tecnologias Dominadas</div>
+              <div class="summary__label">{{ t('skills.summary.technologies') }}</div>
             </div>
           </div>
         </div>

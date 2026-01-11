@@ -1,0 +1,161 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "portfolio": "Projects",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "FRONT-END DEVELOPER",
+    "subtitle": "Transforming ideas into extraordinary digital experiences",
+    "cta": {
+      "projects": "VIEW PROJECTS",
+      "hire": "HIRE ME"
+    },
+    "terminal": {
+      "whoami": "whoami",
+      "name": "felipe.spinoza",
+      "line1": "→ Front-End Developer focused on clean and semantic code",
+      "line2": "→ Specialist in Vue.js, JavaScript (ES6+) and Vite",
+      "line3": "→ Experience with SCSS (BEM), animations and performant interfaces",
+      "line4": "→ Creator of practical digital solutions and impactful web experiences"
+    }
+  },
+  "about": {
+    "tag": "[ABOUT.EXE]",
+    "title": "WHO AM I",
+    "bio": {
+      "title": "# Front-End Developer",
+      "paragraph1": "With {years} years of experience, I've participated in projects that required high performance and modern interfaces for major companies across various sectors. My focus is on creating scalable solutions with clean code centered on user experience.",
+      "paragraph2": "Currently, as a Mid-Level Developer at Verisure, I apply industry best practices and technologies to transform complex ideas into simple, intuitive, high-performance interfaces. Combining usability, performance, and innovation in every delivery."
+    },
+    "meta": {
+      "location": "São Paulo, Brazil",
+      "status": "Available for projects"
+    },
+    "features": {
+      "cleanCode": {
+        "title": "Clean Code",
+        "description": "Development with quality standards and best practices"
+      },
+      "performance": {
+        "title": "Performance",
+        "description": "Applications optimized for maximum speed and efficiency"
+      },
+      "uxui": {
+        "title": "UX/UI Focused",
+        "description": "Intuitive interfaces that connect users to products"
+      },
+      "results": {
+        "title": "Results",
+        "description": "Solutions that generate real impact on clients' businesses"
+      }
+    }
+  },
+  "portfolio": {
+    "tag": "[PROJECTS.DIR]",
+    "title": "PORTFOLIO",
+    "subtitle": "A selection of my most impactful projects, demonstrating expertise in full-stack development and innovative solutions.",
+    "projects": {
+      "matrix": {
+        "title": "MATRIX PORTFOLIO",
+        "description": "Landing page developed with pure code, inspired by the Matrix universe. Includes multi-language support, automatically detecting browser language and saving preference in localStorage.",
+        "status": "BETA"
+      },
+      "gavioes": {
+        "title": "GAVIÕES ACADEMY",
+        "description": "Complete institutional website for Gaviões gym, with responsive structure, dynamic information panels and integration between units, facilitating access to schedules, plans and updates.",
+        "status": "LIVE"
+      },
+      "superix": {
+        "title": "SUPERIX — WEB SOLUTIONS",
+        "description": "Complete redesign of the agency's institutional website, with focus on immersive experience, fluid navigation and better service presentation, ensuring enhancement, visual clarity and consistent digital identity.",
+        "status": "LIVE"
+      },
+      "novaimagem": {
+        "title": "NOVA IMAGEM",
+        "description": "Development of custom institutional website for hospital maintenance company, prioritizing content organization, information clarity and objective navigation for different user profiles.",
+        "status": "DEVELOPMENT"
+      },
+      "prismify": {
+        "title": "PRISMIFY",
+        "description": "Free platform for image conversion and compression, running 100% in browser. Supports WEBP, JPEG and PNG with no upload limits and no file sending to external servers.",
+        "status": "BETA"
+      },
+      "verisure": {
+        "title": "VERISURE - UPSELLING",
+        "description": "Landing page redesign focused on upselling for Verisure, optimizing layout, offer and communication, resulting in a 40% increase in contacts and total conversion of new security items.",
+        "status": "LIVE"
+      }
+    },
+    "terminal": {
+      "command": "ls -la projects/",
+      "hint": "total {count} projects found • showing featured work"
+    }
+  },
+  "skills": {
+    "tag": "[SKILLS.JSON]",
+    "title": "TECH STACK",
+    "subtitle": "Technologies and tools I master to create robust and scalable solutions.",
+    "categories": {
+      "frontend": "FRONTEND",
+      "backend": "BACKEND",
+      "devops": "DEVOPS"
+    },
+    "summary": {
+      "experience": "Years of Experience",
+      "projects": "Delivered Projects",
+      "technologies": "Mastered Technologies"
+    },
+    "terminal": {
+      "command": "cat skills.json",
+      "hint": "Displaying technical expertise • {count} technologies"
+    }
+  },
+  "contact": {
+    "tag": "[CONTACT.SH]",
+    "title": "LET'S TALK",
+    "subtitle": "Have an interesting project? Want to discuss an opportunity? Or just chat about technology? Let's connect!",
+    "info": {
+      "title": "Contact Information",
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location",
+      "locationValue": "São Paulo, Brazil"
+    },
+    "status": {
+      "title": "Status",
+      "online": "Online",
+      "available": "Available for new projects",
+      "response": "Response within 24h",
+      "timezone": "Timezone: GMT-3 (São Paulo)"
+    },
+    "socials": "Social Media"
+  },
+  "footer": {
+    "brand": {
+      "description": "Front-End Developer specialized in creating extraordinary digital experiences. Transforming ideas into working code."
+    },
+    "nav": "Navigation",
+    "status": {
+      "title": "Status",
+      "available": "Available",
+      "location": "São Paulo, BR",
+      "timezone": "GMT-3"
+    },
+    "terminal": {
+      "command": "cat ./status.txt",
+      "line1": "→ Portfolio v2.0.1 - Fully operational",
+      "line2": "→ Last update: {date}",
+      "line3": "→ Upcoming projects: Loading..."
+    },
+    "copyright": {
+      "madeWith": "Made with",
+      "love": "love, not with Lovable",
+      "code": "and lots of code",
+      "builtWith": "Built with Vue.js + Vite",
+      "online": "Online"
+    }
+  }
+}

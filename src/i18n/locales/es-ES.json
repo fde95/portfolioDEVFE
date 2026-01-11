@@ -1,0 +1,161 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca",
+    "portfolio": "Proyectos",
+    "skills": "Habilidades",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "DESARROLLADOR FRONT-END",
+    "subtitle": "Transformando ideas en experiencias digitales extraordinarias",
+    "cta": {
+      "projects": "VER PROYECTOS",
+      "hire": "CONTRATAR"
+    },
+    "terminal": {
+      "whoami": "whoami",
+      "name": "felipe.spinoza",
+      "line1": "→ Desarrollador Front-End enfocado en código limpio y semántico",
+      "line2": "→ Especialista en Vue.js, JavaScript (ES6+) y Vite",
+      "line3": "→ Experiencia con SCSS (BEM), animaciones e interfaces performáticas",
+      "line4": "→ Creador de soluciones digitales prácticas y experiencias web impactantes"
+    }
+  },
+  "about": {
+    "tag": "[ACERCA.EXE]",
+    "title": "QUIÉN SOY",
+    "bio": {
+      "title": "# Desarrollador Front-End",
+      "paragraph1": "Con {years} años de experiencia, he participado en proyectos que requirieron alto rendimiento e interfaces modernas para grandes empresas de diversos sectores. Mi enfoque es crear soluciones escalables, con código limpio y centradas en la experiencia del usuario.",
+      "paragraph2": "Actualmente, como Desarrollador Pleno en Verisure, aplico las mejores prácticas y tecnologías del mercado para transformar ideas complejas en interfaces simples, intuitivas y de alto rendimiento. Uniendo usabilidad, performance e innovación en cada entrega."
+    },
+    "meta": {
+      "location": "São Paulo, Brasil",
+      "status": "Disponible para proyectos"
+    },
+    "features": {
+      "cleanCode": {
+        "title": "Código Limpio",
+        "description": "Desarrollo con estándares de calidad y mejores prácticas"
+      },
+      "performance": {
+        "title": "Performance",
+        "description": "Aplicaciones optimizadas para máxima velocidad y eficiencia"
+      },
+      "uxui": {
+        "title": "UX/UI Enfocado",
+        "description": "Interfaces intuitivas que conectan usuarios a productos"
+      },
+      "results": {
+        "title": "Resultados",
+        "description": "Soluciones que generan impacto real en los negocios de los clientes"
+      }
+    }
+  },
+  "portfolio": {
+    "tag": "[PROYECTOS.DIR]",
+    "title": "PORTAFOLIO",
+    "subtitle": "Una selección de mis proyectos más impactantes, demostrando expertise en desarrollo full-stack y soluciones innovadoras.",
+    "projects": {
+      "matrix": {
+        "title": "PORTAFOLIO MATRIX",
+        "description": "Landing page desarrollada en código puro, inspirada en el universo Matrix. Cuenta con soporte multiidioma, detectando automáticamente el idioma del navegador y guardando la preferencia en localStorage.",
+        "status": "BETA"
+      },
+      "gavioes": {
+        "title": "ACADEMIA GAVIÕES",
+        "description": "Sitio institucional completo para academia Gaviões, con estructura responsiva, paneles de información dinámicos e integración entre unidades, facilitando acceso a horarios, planes y novedades.",
+        "status": "LIVE"
+      },
+      "superix": {
+        "title": "SUPERIX — SOLUCIONES WEB",
+        "description": "Rediseño completo del sitio institucional de la agencia, con foco en experiencia inmersiva, navegación fluida y mejor presentación de servicios, garantizando la mejora, claridad visual e identidad digital consistente.",
+        "status": "LIVE"
+      },
+      "novaimagem": {
+        "title": "NOVA IMAGEM",
+        "description": "Desarrollo de sitio institucional a medida para empresa de mantenimiento hospitalario, priorizando organización del contenido, claridad de informaciones y navegación objetiva para diferentes perfiles de usuarios.",
+        "status": "DEVELOPMENT"
+      },
+      "prismify": {
+        "title": "PRISMIFY",
+        "description": "Plataforma gratuita para conversión y compresión de imágenes, ejecutándose 100% en navegador. Soporta WEBP, JPEG y PNG sin límites de carga ni envío de archivos a servidores externos.",
+        "status": "BETA"
+      },
+      "verisure": {
+        "title": "VERISURE - UPSELLING",
+        "description": "Rediseño de landing page enfocada en upselling para Verisure, optimizando layout, oferta y comunicación, resultando en aumento del 40% en contactos y conversión total de nuevos ítems de seguridad. ",
+        "status": "LIVE"
+      }
+    },
+    "terminal": {
+      "command": "ls -la projects/",
+      "hint": "total {count} proyectos encontrados • mostrando trabajo destacado"
+    }
+  },
+  "skills": {
+    "tag": "[HABILIDADES.JSON]",
+    "title": "TECH STACK",
+    "subtitle": "Tecnologías y herramientas que domino para crear soluciones robustas y escalables.",
+    "categories": {
+      "frontend": "FRONTEND",
+      "backend": "BACKEND",
+      "devops": "DEVOPS"
+    },
+    "summary": {
+      "experience": "Años de Experiencia",
+      "projects": "Proyectos Entregados",
+      "technologies": "Tecnologías Dominadas"
+    },
+    "terminal": {
+      "command": "cat skills.json",
+      "hint": "Mostrando expertise técnica • {count} tecnologías"
+    }
+  },
+  "contact": {
+    "tag": "[CONTACTO.SH]",
+    "title": "HABLEMOS",
+    "subtitle": "¿Tienes un proyecto interesante? ¿Quieres discutir una oportunidad? ¿O simplemente charlar sobre tecnología? ¡Conectemos!",
+    "info": {
+      "title": "Información de Contacto",
+      "email": "Email",
+      "phone": "Teléfono",
+      "location": "Ubicación",
+      "locationValue": "São Paulo, Brasil"
+    },
+    "status": {
+      "title": "Estado",
+      "online": "En línea",
+      "available": "Disponible para nuevos proyectos",
+      "response": "Respuesta en hasta 24h",
+      "timezone": "Zona horaria: GMT-3 (São Paulo)"
+    },
+    "socials": "Redes Sociales"
+  },
+  "footer": {
+    "brand": {
+      "description": "Desarrollador Front-End especializado en crear experiencias digitales extraordinarias. Transformando ideas en código que funciona."
+    },
+    "nav": "Navegación",
+    "status": {
+      "title": "Estado",
+      "available": "Disponible",
+      "location": "São Paulo, BR",
+      "timezone": "GMT-3"
+    },
+    "terminal": {
+      "command": "cat ./status.txt",
+      "line1": "→ Portafolio v2.0.1 - Totalmente operacional",
+      "line2": "→ Última actualización: {date}",
+      "line3": "→ Próximos proyectos: Loading..."
+    },
+    "copyright": {
+      "madeWith": "Hecho con",
+      "love": "amor, y no con Lovable",
+      "code": "y mucho código",
+      "builtWith": "Construido con Vue.js + Vite",
+      "online": "En línea"
+    }
+  }
+}

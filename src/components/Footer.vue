@@ -1,5 +1,9 @@
 <script setup>
 import { computed, h, defineComponent } from "vue";
+import { useI18n } from 'vue-i18n';
+
+/* i18n para traduções */
+const { t } = useI18n();
 
 /* data */
 const currentYear = new Date().getFullYear();
@@ -11,12 +15,15 @@ const socialLinks = [
   { icon: "instagram", href: "https://www.instagram.com/fde.95/", label: "Instagram" },
 ];
 
-const quickLinks = [
-  { label: "Sobre", href: "#about" },
-  { label: "Projetos", href: "#portfolio" },
-  { label: "Skills", href: "#skills" },
-  { label: "Contato", href: "#contact" },
-];
+/**
+ * Links de navegação traduzidos dinamicamente
+ */
+const quickLinks = computed(() => [
+  { label: t('nav.about'), href: "#about" },
+  { label: t('nav.portfolio'), href: "#portfolio" },
+  { label: t('nav.skills'), href: "#skills" },
+  { label: t('nav.contact'), href: "#contact" },
+]);
 
 /* inline SVG icons (inclui LinkedIn com viewBox 16x16 fornecido e Instagram 16x16) */
 const Icon = defineComponent({
@@ -124,8 +131,7 @@ const Icon = defineComponent({
             <span class="footer__brand-name">DEVFE.EXE</span>
           </div>
           <p class="footer__brand-desc">
-            Desenvolvedor Front-End especializado em criar experiências digitais
-            extraordinárias. Transformando ideias em código que funciona.
+            {{ t('footer.brand.description') }}
           </p>
 
           <div class="footer__socials">
@@ -145,7 +151,7 @@ const Icon = defineComponent({
 
         <!-- Quick Links -->
         <nav class="footer__nav">
-          <h3 class="footer__title">Navegação</h3>
+          <h3 class="footer__title">{{ t('footer.nav') }}</h3>
           <ul class="footer__links">
             <li v-for="(l, i) in quickLinks" :key="i">
               <a :href="l.href" class="footer__link">{{ l.label }}</a>
@@ -155,14 +161,14 @@ const Icon = defineComponent({
 
         <!-- Status -->
         <div class="footer__status">
-          <h3 class="footer__title">Status</h3>
+          <h3 class="footer__title">{{ t('footer.status.title') }}</h3>
           <div class="footer__status-list">
             <div class="footer__status-row">
               <span class="footer__dot"></span>
-              <span class="footer__status-text">Disponível</span>
+              <span class="footer__status-text">{{ t('footer.status.available') }}</span>
             </div>
-            <div class="footer__status-sub">São Paulo, BR</div>
-            <div class="footer__status-sub">GMT-3</div>
+            <div class="footer__status-sub">{{ t('footer.status.location') }}</div>
+            <div class="footer__status-sub">{{ t('footer.status.timezone') }}</div>
           </div>
         </div>
       </div>
@@ -172,15 +178,15 @@ const Icon = defineComponent({
         <div class="footer__term-lines">
           <div class="footer__term-row">
             <span class="footer__prompt">user@portfolio:~$</span>
-            <span class="footer__cmd">cat ./status.txt</span>
+            <span class="footer__cmd">{{ t('footer.terminal.command') }}</span>
           </div>
           <div class="footer__term-hint">
-            → Portfolio v2.0.1 - Totalmente operacional
+            {{ t('footer.terminal.line1') }}
           </div>
           <div class="footer__term-hint">
-            → Última atualização: {{ lastUpdate }}
+            {{ t('footer.terminal.line2', { date: lastUpdate }) }}
           </div>
-          <div class="footer__term-hint">→ Próximos projetos: Loading...</div>
+          <div class="footer__term-hint">{{ t('footer.terminal.line3') }}</div>
         </div>
       </div>
 
@@ -188,16 +194,16 @@ const Icon = defineComponent({
       <div class="footer__bottom">
         <div class="footer__copy">
           <span>© {{ currentYear }} DEVFE.</span>
-          <span>Feito com</span>
-          <Icon name="heart" class="footer__heart" /> <small>(amor, e não Lovable)</small>
-          <span>e muito código</span>
+          <span>{{ t('footer.copyright.madeWith') }}</span>
+          <Icon name="heart" class="footer__heart" /> <small>({{ t('footer.copyright.love') }})</small>
+          <span>{{ t('footer.copyright.code') }}</span>
         </div>
 
         <div class="footer__stack">
-          <span class="footer__stack-text">Construído com Vue.js + Vite</span>
+          <span class="footer__stack-text">{{ t('footer.copyright.builtWith') }}</span>
           <div class="footer__online">
             <span class="footer__dot"></span>
-            <span class="footer__online-text">Online</span>
+            <span class="footer__online-text">{{ t('footer.copyright.online') }}</span>
           </div>
         </div>
       </div>

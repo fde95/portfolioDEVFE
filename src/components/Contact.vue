@@ -1,5 +1,9 @@
 <script setup>
-import { ref, onMounted, onUnmounted, h, defineComponent } from "vue";
+import { ref, onMounted, onUnmounted, h, defineComponent, computed } from "vue";
+import { useI18n } from 'vue-i18n';
+
+/* i18n para traduções */
+const { t } = useI18n();
 
 /* Visibilidade via IntersectionObserver */
 const isVisible = ref(false);
@@ -112,22 +116,25 @@ const Icon = defineComponent({
   },
 });
 
-/* Dados */
-const contactInfo = [
+/**
+ * Dados de contato traduzidos dinamicamente
+ * Usa computed para reagir a mudanças de idioma
+ */
+const contactInfo = computed(() => [
   {
     icon: "mail",
-    label: "Email",
+    label: t('contact.info.email'),
     value: "contato@devfe.com.br",
     link: "mailto:contato@devfe.com.br",
   },
   {
     icon: "phone",
-    label: "Telefone",
+    label: t('contact.info.phone'),
     value: "+55 (11) 97897-3663",
     link: "https://api.whatsapp.com/send/?phone=5511978973663&text=Ol%C3%A1+Felipe%2C+venho+atrav%C3%A9s+do+seu+portf%C3%B3lio+e+gostaria+de+conversar+sobre+um+projeto.&type=phone_number&app_absent=0",
   },
-  { icon: "map", label: "Localização", value: "São Paulo, Brasil", link: null },
-];
+  { icon: "map", label: t('contact.info.location'), value: t('contact.info.locationValue'), link: null },
+]);
 
 const socialLinks = [
   {
@@ -156,16 +163,15 @@ const socialLinks = [
     <div class="container contact__container">
       <!-- Header -->
       <header class="contact__header">
-        <span class="contact__tag">[CONTATO.SH]</span>
+        <span class="contact__tag">{{ t('contact.tag') }}</span>
         <h2
           class="cyber-title contact__title glitch"
-          :data-text="'VAMOS CONVERSAR'"
+          :data-text="t('contact.title')"
         >
-          VAMOS CONVERSAR
+          {{ t('contact.title') }}
         </h2>
         <p class="contact__subtitle">
-          Tem um projeto interessante? Quer discutir uma oportunidade? Ou apenas
-          bater um papo sobre tecnologia? Vamos conectar!
+          {{ t('contact.subtitle') }}
         </p>
       </header>
 
@@ -192,21 +198,21 @@ const socialLinks = [
             <div class="contact-status__body">
               <div class="contact-status__line">
                 <span class="contact-status__led"></span>
-                <span class="contact-status__ok">Online</span>
+                <span class="contact-status__ok">{{ t('contact.status.online') }}</span>
               </div>
               <div class="contact-status__hint">
-                → Disponível para novos projetos
+                → {{ t('contact.status.available') }}
               </div>
-              <div class="contact-status__hint">→ Resposta em até 24h</div>
+              <div class="contact-status__hint">→ {{ t('contact.status.response') }}</div>
               <div class="contact-status__hint">
-                → Timezone: GMT-3 (São Paulo)
+                → {{ t('contact.status.timezone') }}
               </div>
             </div>
           </div>
 
           <!-- Informações de Contato -->
           <div class="card--matrix contact-card">
-            <h3 class="contact-card__title">Informações de Contato</h3>
+            <h3 class="contact-card__title">{{ t('contact.info.title') }}</h3>
 
             <div class="contact-card__list">
               <div
@@ -245,7 +251,7 @@ const socialLinks = [
           :class="{ 'is-visible': isVisible }"
         >
           <div class="card--matrix contact-card">
-            <h3 class="contact-card__title">Redes Sociais</h3>
+            <h3 class="contact-card__title">{{ t('contact.socials') }}</h3>
 
             <div class="social-list">
               <a

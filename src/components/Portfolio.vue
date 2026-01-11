@@ -1,5 +1,9 @@
 <script setup>
-import { ref, onMounted, onUnmounted, h, defineComponent } from "vue";
+import { ref, onMounted, onUnmounted, h, defineComponent, computed } from "vue";
+import { useI18n } from 'vue-i18n';
+
+/* i18n para traduções */
+const { t } = useI18n();
 
 const isVisible = ref(false);
 const sectionEl = ref(null);
@@ -92,51 +96,70 @@ const Icon = defineComponent({
   },
 });
 
-/* ===== Dados ===== */
-const projects = [
+/**
+ * Projetos traduzidos dinamicamente
+ * Usa computed para reagir a mudanças de idioma
+ */
+const projects = computed(() => [
   {
     id: 1,
-    title: "MATRIX PORTFÓLIO",
-    description:
-      "Landing page desenvolvida em código puro e inspirada no universo digital da Matrix. Projeto focado em performance, UI/UX avançado e transições fluídas. Ideal para demonstrar domínio em front-end e manipulação de interface visual refinada.",
+    title: t('portfolio.projects.matrix.title'),
+    description: t('portfolio.projects.matrix.description'),
     tech: ["Vite", "VueJS", "JavaScript", "ES6+", "SASS", "Git"],
-    status: "BETA",
+    status: t('portfolio.projects.matrix.status'),
     category: "FRONTEND",
     githubUrl: "https://github.com/fde95/portfolioDEVFE",
     demoUrl: "https://portfolio.devfe.com.br/",
   },
   {
     id: 2,
-    title: "ACADEMIA GAVIÕES",
-    description:
-      "Site institucional completo e responsivo, com painel de informações dinâmico e integração entre filiais. Interface moderna, navegação intuitiva e tradução automática para diversos idiomas, garantindo acessibilidade e melhor ranqueamento.",
+    title: t('portfolio.projects.verisure.title'),
+    description: t('portfolio.projects.verisure.description'),
+    tech: ["Vite", "VueJS", "JavaScript", "Bootstrap", "SASS", "Git"],
+    status: t('portfolio.projects.verisure.status'),
+    category: "FRONTEND",
+    demoUrl: "https://clienteverisure.com.br/Operacoes/OWA/LP/upselling/Novos%20precos/",
+  }
+  ,
+  {
+    id: 3,
+    title: t('portfolio.projects.gavioes.title'),
+    description: t('portfolio.projects.gavioes.description'),
     tech: ["Joomla", "HTML 5", "CSS 3", "JavaScript", "jQuery"],
-    status: "LIVE",
+    status: t('portfolio.projects.gavioes.status'),
     category: "FULLSTACK",
     demoUrl: "https://gymgavioes.com.py/",
   },
   {
-    id: 3,
-    title: "SUPERIX — SOLUÇÕES WEB",
-    description:
-      "Redesign do site institucional da agência Superix, priorizando experiência imersiva e fluidez de navegação. Layout responsivo, leve e otimizado para SEO, reforçando a identidade visual e o posicionamento digital da marca.",
-    tech: ["Joomla", "HTML 5", "CSS 3", "JavaScript", "jQuery"],
-    status: "LIVE",
-    category: "FULLSTACK",
-    demoUrl: "https://www.superix.com.br/",
+    id: 4,
+    title: t('portfolio.projects.prismify.title'),
+    description: t('portfolio.projects.prismify.description'),
+    tech: ["Vite", "VueJS", "JavaScript", "ES6+", "SASS", "Git"],
+    status: t('portfolio.projects.prismify.status'),
+    category: "FRONTEND",
+    githubUrl: "https://github.com/fde95/prismify",
+    demoUrl: "https://prismify-three.vercel.app/",
   },
   {
-    id: 4,
-    title: "NOVA IMAGEM",
-    description:
-      "Desenvolvimento de site institucional sob medida para empresa de manutenção hospitalar. Migração completa do CMS para código puro, garantindo leveza, segurança e um design moderno voltado à performance e usabilidade.",
+    id: 5,
+    title: t('portfolio.projects.novaimagem.title'),
+    description: t('portfolio.projects.novaimagem.description'),
     tech: ["Vite", "VueJS", "JavaScript", "ES6+", "SASS", "Git"],
-    status: "DEVELOPMENT",
+    status: t('portfolio.projects.novaimagem.status'),
     category: "FRONTEND",
     githubUrl: "https://github.com/fde95/novaImagemVueJS",
     demoUrl: "https://novaimagem.com.br/",
   },
-];
+  {
+    id: 6,
+    title: t('portfolio.projects.superix.title'),
+    description: t('portfolio.projects.superix.description'),
+    tech: ["Joomla", "HTML 5", "CSS 3", "JavaScript", "jQuery"],
+    status: t('portfolio.projects.superix.status'),
+    category: "FULLSTACK",
+    demoUrl: "https://www.superix.com.br/",
+  }
+]);
 
 function statusClass(status) {
   switch (status) {
@@ -158,16 +181,15 @@ function statusClass(status) {
     <div class="container portfolio__container">
       <!-- Cabeçalho -->
       <header class="portfolio__header">
-        <span class="portfolio__tag">[PROJETOS.DIR]</span>
+        <span class="portfolio__tag">{{ t('portfolio.tag') }}</span>
         <h2
           class="cyber-title portfolio__title glitch"
-          :data-text="'PORTFOLIO'"
+          :data-text="t('portfolio.title')"
         >
-          PORTFOLIO
+          {{ t('portfolio.title') }}
         </h2>
         <p class="portfolio__subtitle">
-          Uma seleção dos meus projetos mais impactantes, demonstrando expertise
-          em desenvolvimento full-stack e soluções inovadoras.
+          {{ t('portfolio.subtitle') }}
         </p>
       </header>
 

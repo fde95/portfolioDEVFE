@@ -1,5 +1,9 @@
 <script setup>
 import { ref, onMounted, onUnmounted, h, defineComponent, computed } from "vue";
+import { useI18n } from 'vue-i18n';
+
+/* i18n para traduções */
+const { t } = useI18n();
 
 const isVisible = ref(false);
 const sectionEl = ref(null);
@@ -128,28 +132,32 @@ const Icon = defineComponent({
   },
 });
 
-const features = [
+/**
+ * Features traduzidas dinamicamente
+ * Usa computed para reagir a mudanças de idioma
+ */
+const features = computed(() => [
   {
     icon: "code",
-    title: "Código Limpo",
-    description: "Desenvolvimento com padrões de qualidade e melhores práticas",
+    title: t('about.features.cleanCode.title'),
+    description: t('about.features.cleanCode.description'),
   },
   {
     icon: "zap",
-    title: "Performance",
-    description: "Aplicações otimizadas para máxima velocidade e eficiência",
+    title: t('about.features.performance.title'),
+    description: t('about.features.performance.description'),
   },
   {
     icon: "users",
-    title: "UX/UI Focado",
-    description: "Interfaces intuitivas que conectam usuários aos produtos",
+    title: t('about.features.uxui.title'),
+    description: t('about.features.uxui.description'),
   },
   {
     icon: "target",
-    title: "Resultados",
-    description: "Soluções que geram impacto real nos negócios dos clientes",
+    title: t('about.features.results.title'),
+    description: t('about.features.results.description'),
   },
-];
+]);
 
 const START_YEAR = 2022
 const yearsExperience = computed(() => {
@@ -162,9 +170,9 @@ const yearsExperience = computed(() => {
   <section id="about" ref="sectionEl" class="section about">
     <div class="container about__container">
       <header class="about__header">
-        <span class="about__tag">[SOBRE.EXE]</span>
-        <h2 class="cyber-title about__title glitch" :data-text="'QUEM SOU EU'">
-          QUEM SOU EU
+        <span class="about__tag">{{ t('about.tag') }}</span>
+        <h2 class="cyber-title about__title glitch" :data-text="t('about.title')">
+          {{ t('about.title') }}
         </h2>
       </header>
 
@@ -180,27 +188,18 @@ const yearsExperience = computed(() => {
 
             <div class="about__card-body">
               <p class="about__line about__line--title">
-                # Desenvolvedor Front-End
+                {{ t('about.bio.title') }}
               </p>
               <p class="about__line">
-                Com {{ yearsExperience }} anos de experiência, participei de
-                projetos que exigiram alta performance e interfaces modernas
-                para grandes empresas de diversos setores. Tenho
-                como foco criar soluções escaláveis, com código limpo e
-                centradas na experiência do usuário.
+                {{ t('about.bio.paragraph1', { years: yearsExperience }) }}
               </p>
               <p class="about__line">
-                Atualmente, como Desenvolvedor Pleno na Verisure, aplico as
-                melhores práticas e tecnologias do mercado para transformar
-                ideias complexas em interfaces simples, intuitivas e de alto
-                desempenho. Unindo usabilidade, performance e inovação em cada
-                entrega.
+                {{ t('about.bio.paragraph2') }}
               </p>
 
               <div class="about__meta">
                 <p class="about__meta-line">
-                  <span class="about__meta-key">→ location:</span> São Paulo,
-                  Brasil
+                  <span class="about__meta-key">→ location:</span> {{ t('about.meta.location') }}
                 </p>
                 <p class="about__meta-line">
                   <span class="about__meta-key">→ email:</span>
@@ -209,8 +208,7 @@ const yearsExperience = computed(() => {
                   >
                 </p>
                 <p class="about__meta-line">
-                  <span class="about__meta-key">→ status:</span> Disponível para
-                  projetos
+                  <span class="about__meta-key">→ status:</span> {{ t('about.meta.status') }}
                 </p>
               </div>
             </div>
