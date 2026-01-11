@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted, h, defineComponent, computed } from "vue";
-import { useI18n } from 'vue-i18n';
-import LanguageSelector from './LanguageSelector.vue';
+import { useI18n } from "vue-i18n";
+import LanguageSelector from "./LanguageSelector.vue";
 
 /* i18n para traduções */
 const { t } = useI18n();
@@ -17,11 +17,15 @@ const mobileMaxHeight = "420px";
  * Itens de navegação traduzidos dinamicamente
  */
 const navItems = computed(() => [
-  { id: "home", label: t('nav.home').toUpperCase(), href: "#" },
-  { id: "about", label: t('nav.about').toUpperCase(), href: "#about" },
-  { id: "portfolio", label: t('nav.portfolio').toUpperCase(), href: "#portfolio" },
-  { id: "skills", label: t('nav.skills').toUpperCase(), href: "#skills" },
-  { id: "contact", label: t('nav.contact').toUpperCase(), href: "#contact" },
+  { id: "home", label: t("nav.home").toUpperCase(), href: "#" },
+  { id: "about", label: t("nav.about").toUpperCase(), href: "#about" },
+  {
+    id: "portfolio",
+    label: t("nav.portfolio").toUpperCase(),
+    href: "#portfolio",
+  },
+  { id: "skills", label: t("nav.skills").toUpperCase(), href: "#skills" },
+  { id: "contact", label: t("nav.contact").toUpperCase(), href: "#contact" },
 ]);
 
 /* navegação suave */
@@ -215,7 +219,7 @@ const Icon = defineComponent({
           class="button--matrix nav__cta-btn"
           @click="scrollTo('#contact')"
         >
-          {{ t('hero.cta.hire') }}
+          {{ t("hero.cta.hire") }}
         </button>
       </div>
 
@@ -240,6 +244,8 @@ const Icon = defineComponent({
       :class="{ 'is-open': isMobileMenuOpen }"
       :style="{ maxHeight: isMobileMenuOpen ? mobileMaxHeight : '0px' }"
     >
+      <!-- Seletor de idioma (mobile) -->
+      <LanguageSelector />
       <div class="nav__mobile-inner">
         <button
           v-for="item in navItems"
@@ -256,7 +262,7 @@ const Icon = defineComponent({
             class="button--matrix nav__mobile-cta-btn"
             @click="handleMobileClick('#contact')"
           >
-            CONTRATAR AGORA
+            {{ t("hero.cta.hire") }}
           </button>
         </div>
       </div>
@@ -376,8 +382,10 @@ $bp-md: 768px;
   /* CTA desktop */
   &__cta {
     display: none;
+    gap: 1rem;
+    align-items: center;
     @media (min-width: $bp-md) {
-      display: block;
+      display: flex;
     }
   }
   &__cta-btn {
@@ -444,6 +452,8 @@ $bp-md: 768px;
     margin-top: 0.75rem;
     padding-top: 0.75rem;
     border-top: 1px solid hsl(var(--matrix-green) / 0.2);
+    display: grid;
+    gap: 0.75rem;
   }
   &__mobile-cta-btn {
     width: 100%;
