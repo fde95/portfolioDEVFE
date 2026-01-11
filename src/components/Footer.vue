@@ -11,7 +11,7 @@ const lastUpdate = new Date().toLocaleDateString("pt-BR");
 
 const socialLinks = [
   { icon: "github", href: "https://github.com/fde95", label: "GitHub" },
-  { icon: "linkedin", href: "https://www.linkedin.com/in/fde95/", label: "LinkedIn" },
+  { icon: "linkedin", href: "https://www.linkedin.com/in/felipe-domingues-espinoza/", label: "LinkedIn" },
   { icon: "instagram", href: "https://www.instagram.com/fde.95/", label: "Instagram" },
 ];
 

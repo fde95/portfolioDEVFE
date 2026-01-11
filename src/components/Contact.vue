@@ -146,8 +146,8 @@ const socialLinks = [
   {
     icon: "linkedin",
     name: "LinkedIn",
-    url: "https://www.linkedin.com/in/fde95/",
-    username: "/in/fde95",
+    url: "https://www.linkedin.com/in/felipe-domingues-espinoza/",
+    username: "/in/felipe-domingues-espinoza",
   },
   {
     icon: "instagram",
